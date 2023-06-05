@@ -1,0 +1,29 @@
+part of 'cart_cubit.dart';
+
+@immutable
+abstract class CartState {
+  List<CartItemModel> items;
+
+  CartState(this.items);
+
+}
+
+class CartInitialState extends CartState {
+  CartInitialState() : super([]);
+}
+
+class CartLoadingState extends CartState{
+  CartLoadingState(super.items);
+}
+
+
+class CartLoadedState extends CartState{
+  CartLoadedState(super.items);
+
+}
+
+class CartErrorState extends CartState{
+  final String message;
+  CartErrorState(this.message ,super.items);
+
+}
